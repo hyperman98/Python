@@ -3,15 +3,35 @@ x = list(map(int, input("Введите количество элементов 
 if (len(x) > N or N > len(x)):
     print("Количество элементов в последовательности должно быть равно N")
 else:
-    def quicksort(x):
+    import random
+    def sort_mas(x):
         if len(x) <= 1:
             return x
         else:
-            q = len(x)
+            v = random.choice(x)
+            big_nums = []
+            sm_nums = []
+            q_nums = []
+            for j in x:
+                if j < v:
+                    sm_nums.append(j)
+                elif j > v:
+                    big_nums.append(j)
+                else:
+                    q_nums.append(j)
+            return sort_mas(sm_nums) + q_nums + sort_mas(big_nums)
+    y = sort_mas(x)
+
+
+    def quicksort(y):
+        if len(y) <= 1:
+            return y
+        else:
+            q = len(y)
             ch_nums = []
             un_nums = []
             e_nums = []
-            for i in x:
+            for i in y:
                 if (i <= q and i % 2 == 0):
                     ch_nums.append(i)
                 elif (i <= q and i % 2 != 0):
@@ -21,7 +41,7 @@ else:
 
             return quicksort(ch_nums) + e_nums + quicksort(list(reversed(un_nums)))
 
-res = quicksort(x)
+res = quicksort(y)
 print(res)
 
 
