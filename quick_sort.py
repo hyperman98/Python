@@ -22,13 +22,12 @@ else:
             return sort_mas(sm_nums) + q_nums + sort_mas(big_nums)
     y = sort_mas(x)
 
-
     def quicksort(y):
         if len(y) <= 1:
             return y
         else:
-            q = len(y)
-            ch_nums = []
+            q = random.randint(1, 100)
+            ch_nums = [] 
             un_nums = []
             e_nums = []
             for i in y:
