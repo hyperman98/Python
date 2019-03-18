@@ -1,2 +1,2 @@
-# Test task is second option to NapoleonIT
-Быстрая сортировка с четными и нечетными числами
+# Test task to NapoleonIT
+QuickSort on Python
