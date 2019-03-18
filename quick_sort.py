@@ -20,27 +20,12 @@ else:
                 else:
                     q_nums.append(j)
             return sort_mas(sm_nums) + q_nums + sort_mas(big_nums)
-    y = sort_mas(x)
 
-    def quicksort(y):
-        if len(y) <= 1:
-            return y
-        else:
-            q = random.randint(1, 100)
-            ch_nums = [] 
-            un_nums = []
-            e_nums = []
-            for i in y:
-                if (i <= q and i % 2 == 0):
-                    ch_nums.append(i)
-                elif (i <= q and i % 2 != 0):
-                    un_nums.append(i)
-                else:
-                    e_nums.append(i)
-
-            return quicksort(ch_nums) + e_nums + quicksort(list(reversed(un_nums)))
-
-res = quicksort(y)
+ch = [int(i) for i in x if i % 2 == 0]
+un = [int(i) for i in x if i % 2 != 0]
+L = sort_mas(ch)
+R = sort_mas(un)
+res = L + list(reversed(R))
 print(res)
 
 
